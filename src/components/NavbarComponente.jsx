@@ -1,10 +1,17 @@
-import React from 'react'; 
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { ThemeContext } from '../App';
 
 const NavbarComponente = ({ searchQuery, handleSearch }) => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar
+      bg={theme === 'dark' ? 'dark' : 'light'}
+      variant={theme === 'dark' ? 'dark' : 'light'}
+      expand="lg"
+    >
       <Navbar.Brand href="#home">Book Store</Navbar.Brand>
       <Nav className="mr-auto" style={{ marginRight: '30px' }}>
         <Nav.Link as={Link} to="/">Home</Nav.Link>
@@ -25,8 +32,7 @@ const NavbarComponente = ({ searchQuery, handleSearch }) => {
         </Button>
       </Form>
 
-
-      <Button variant="outline-light" className="ms-2">
+      <Button variant="outline-secondary" className="ms-2" onClick={toggleTheme}>
         Toggle Theme
       </Button>
     </Navbar>
@@ -34,3 +40,4 @@ const NavbarComponente = ({ searchQuery, handleSearch }) => {
 };
 
 export default NavbarComponente;
+
