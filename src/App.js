@@ -11,6 +11,7 @@ import CommentArea from "./components/CommentArea";
 import BookDetails from "./components/BookDetails";
 import NotFound from "./components/NotFound";
 import fantasy from "./books/fantasy.json";
+import './App.css';
 
 export const ThemeContext = createContext();
 
@@ -48,7 +49,9 @@ const App = () => {
                       />
                     </Col>
                     <Col md={4}>
-                      <CommentArea asin={selectedBookAsin} enableActions />
+                      <div className="comment-area-wrapper">
+                        <CommentArea asin={selectedBookAsin} enableActions />
+                      </div>
                     </Col>
                   </Row>
                 </>

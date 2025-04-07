@@ -2,8 +2,8 @@ import { Button, ListGroup } from 'react-bootstrap'
 
 const SingleComment = ({ comment, deleteComment }) => {
   return (
-    <ListGroup.Item>
-      {comment.comment}
+    <ListGroup.Item data-testid="single-comment">
+      {comment.comment }
       <Button
         variant="danger"
         className="ms-2"

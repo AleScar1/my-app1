@@ -94,4 +94,14 @@ describe('Book card selection behavior', () => {
   
 });
 
+//test singlecommment
+describe('CommentArea component tests', () => {
+  it('non reinderizza alcun componente singlecommment ', () => {
+    render(<App />);
+    const comments = screen.queryAllByTestId('single-comment');
+    expect(comments.length).toBe(0);
+  });   
+
+  
+});
 
